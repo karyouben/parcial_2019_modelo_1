@@ -74,11 +74,12 @@ public class OfertaEmpleo {
 		int res=this.getFecha().compareTo(o.getFecha());
 		if(res==0) {
 			res=this.getEspecialidad().compareTo(o.getEspecialidad());
-		}else if(res==0) {
-			res=this.getTipo().compareTo(o.getTipo());
-			
-		}else if(res==0) {
-			res=this.numPlazasTotal().compareTo(o.numPlazasTotal());
+			if(res==0) {
+				res=this.getTipo().compareTo(o.getTipo());
+				if(res==0) {
+					res=this.numPlazasTotal().compareTo(o.numPlazasTotal());
+		      }	
+		  }
 		}return res;
 	}
 	@Override
